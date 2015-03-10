@@ -15,7 +15,7 @@
 
 name:                hmatrix-labeled
 version:             0.1.0.0
-homepage:            https://gitorious.org/hmatrix-labeled
+homepage:            https://github.com/nkaretnikov/hmatrix-labeled
 license:             GPL-3
 license-file:        LICENSE
 author:              Nikita Karetnikov
