@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 {- hmatrix-labeled: matrices with row and column headers.
    Copyright 2014 Nikita Karetnikov <nikita@karetnikov.org>
 
@@ -48,7 +49,11 @@ module Data.Packed.LMatrix
        ) where
 
 import Prelude hiding (reverse, map, elem)
+#if MIN_VERSION_hmatrix(0,17,0)
+import qualified Numeric.LinearAlgebra.Data as P
+#else
 import qualified Data.Packed as P
+#endif
 import qualified Data.List  as L hiding (elem)
 
 type Row = String

@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 {- hmatrix-labeled: matrices with row and column headers.
    Copyright 2014 Nikita Karetnikov <nikita@karetnikov.org>
 
@@ -20,7 +21,11 @@ module Data.Packed.LMatrix.IO
        ) where
 
 import Prelude hiding (readFile, writeFile)
+#if MIN_VERSION_hmatrix(0,17,0)
+import qualified Numeric.LinearAlgebra.Data as P
+#else
 import qualified Data.Packed as P
+#endif
 import Data.Packed.LMatrix hiding (map, row, rows)
 import qualified System.IO as S
 import Text.Parsec hiding (label, space)
